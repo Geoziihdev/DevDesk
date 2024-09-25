@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarme de Pausas</title>
+    <link rel="stylesheet" href="styles.css">    
+</head>
+<body>
+    <div id="typescript-docs" class="documentation-content">
+        <h1>Alarme de Pausas</h1>
+        <h3>Defina até três horários</h3>
+        
+        <label for="alarm-time-1">Horário 1 (HH:MM):</label>
+        <input type="time" id="alarm-time-1" required>
+        <label for="alarm-time-2">Horário 2 (HH:MM):</label>
+        <input type="time" id="alarm-time-2" required>
+        <label for="alarm-time-3">Horário 3 (HH:MM):</label>
+        <input type="time" id="alarm-time-3" required>
+        
+        <button id="set-alarms">Definir Alarmes</button>
+        <div id="message" style="color: green;"></div>
+        <audio id="alarm-sound" src="dormeMarinaHaroldotorrecilha.mp3" preload="auto"></audio>
+    </div>
+
+    <script>
+        document.getElementById('set-alarms').addEventListener('click', function() {
+            const alarmInputs = [
+                document.getElementById('alarm-time-1').value,
+                document.getElementById('alarm-time-2').value,
+                document.getElementById('alarm-time-3').value,
+            ];
+
+            const now = new Date();
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = ""; // Limpa mensagens anteriores
+
+            alarmInputs.forEach((alarmInput, index) => {
+                if (!alarmInput) {
+                    alert('Por favor, defina todos os horários.');
+                    return;
+                }
+
+                const [hours, minutes] = alarmInput.split(':').map(Number);
+                const alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+
+                // Se o horário já passou hoje, defina para amanhã
+                if (alarmTime <= now) {
+                    alarmTime.setDate(alarmTime.getDate() + 1);
+                }
+
+                const timeToAlarm = alarmTime.getTime() - now.getTime();
+
+                setTimeout(() => {
+                    document.getElementById('alarm-sound').play().catch(error => {
+                        console.log("Erro ao tocar o som: ", error);
+                    });
+                    messageDiv.innerHTML += `Alarme ${index + 1} tocando às ${alarmInput}!<br>`;
+                }, timeToAlarm);
+            });
+
+            messageDiv.innerHTML += "Alarmes definidos!<br>";
+        });
+    </script>
+</body>
+</html>

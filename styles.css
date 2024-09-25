@@ -1,0 +1,153 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o título principal */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para os subtítulos */
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-align: left; /* Alinhamento à esquerda */
+    color: #007bff; /* Cor do texto */
+}
+
+/* Estilo para o conteúdo da documentação */
+.documentation-content {
+    display: block; /* Muda para 'block' para mostrar o conteúdo por padrão */
+    margin: 20px auto; /* Centraliza o conteúdo */
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 8px; /* Bordas arredondadas */
+    max-width: 800px; /* Limita a largura máxima */
+}
+
+/* Adiciona estilo específico para a lista de palavras-chave e conceitos */
+.documentation-content ul {
+    padding-left: 20px;
+}
+
+.documentation-content li {
+    margin-bottom: 10px;
+}
+
+.documentation-content strong {
+    color: #007bff; /* Cor para palavras-chave */
+}
+
+/* Estilo para as seções */
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-align: center; /* Centraliza o texto */
+    border: 2px solid #007bff; /* Borda azul ao redor do título */
+    padding: 10px; /* Espaço interno ao redor do texto */
+    border-radius: 8px; /* Cantos arredondados da borda */
+    background-color: #f9f9f9; /* Cor de fundo leve */
+    color: #007bff; /* Cor do texto igual à cor da borda */
+    font-size: 1.5em; /* Tamanho da fonte ajustado */
+    font-weight: bold; /* Fonte em negrito */
+}
+
+/* Estilo para o container das seções */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo para as seções */
+.section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a imagem dentro da seção */
+.section-image {
+    width: 150px; /* Ajuste o valor conforme necessário */
+    height: auto; /* Mantém a proporção original da imagem */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem dentro da seção */
+}
+
+/* Estilo para o botão geral */
+.button, .button-show {
+    display: block;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%; /* Ajuste a largura para ocupar toda a largura disponível */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+}
+
+.button:hover, .button-show:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo específico para o botão que mostra/oculta a documentação */
+.button-show {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button-show:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para o botão Alarme */
+#set-alarm {
+    padding: 12px 24px; /* Aumentado para mais conforto */
+    background-color: #28a745; /* Verde para destacar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Aumentado para mais legibilidade */
+    margin-top: 10px; /* Espaço acima do botão */
+    transition: background-color 0.3s ease; /* Efeito suave na transição */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#set-alarm:hover {
+    background-color: #218838; /* Escurece ao passar o mouse */
+}
+
+/* Estilo para o input de tempo */
+input[type="time"] {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Largura total */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Cantos arredondados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: border-color 0.3s; /* Efeito suave na borda */
+}
+
+input[type="time"]:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    outline: none; /* Remove contorno padrão */
+}
